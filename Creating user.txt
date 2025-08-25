@@ -1,0 +1,19 @@
+Creating user
+
+SQL> connect system
+Enter password:
+Connected.
+SQL> CREATE USER Sneha IDENTIFIED BY 23049021;
+
+User created.
+
+SQL> GRANT CONNECT, RESOURCE to Sneha;
+
+Grant succeeded.
+
+SQL> CONNECT Sneha/23049021
+Connected.
+
+
+
+

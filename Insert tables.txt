@@ -1,0 +1,271 @@
+
+
+SQL> INSERT ALL
+  2  INTO Program (ProgramID, ProgramName, ProgramDuration, ProgramType)
+  3  VALUES (401, 'BSc Information Technology', '3 Years', 'Full-Time')
+  4  INTO Program (ProgramID, ProgramName, ProgramDuration, ProgramType)
+  5  VALUES (402, 'BSc Cybersecurity', '3 Years', 'Part-Time')
+  6  INTO Program (ProgramID, ProgramName, ProgramDuration, ProgramType)
+  7  VALUES (403, 'BSc Data Analytics', '4 Years', 'Full-Time')
+  8  INTO Program (ProgramID, ProgramName, ProgramDuration, ProgramType)
+  9  VALUES (404, 'BSc Game Development', '3 Years', 'Full-Time')
+ 10  INTO Program (ProgramID, ProgramName, ProgramDuration, ProgramType)
+ 11  VALUES (405, 'BSc Robotics', '4 Years', 'Part-Time')
+ 12  INTO Program (ProgramID, ProgramName, ProgramDuration, ProgramType)
+ 13  VALUES (406, 'BSc Software Engineering', '3 Years', 'Full-Time')
+ 14  INTO Program (ProgramID, ProgramName, ProgramDuration, ProgramType)
+ 15  VALUES (407, 'BSc Cloud Computing', '3 Years', 'Part-Time')
+ 16  SELECT * FROM dual;
+
+7 rows created.
+
+SQL> INSERT ALL
+  2  INTO Student (StudentID, ProgramID, StudentName, StudentAddress, StudentGender, StudentContact, StudentEmail)
+  3  VALUES (301, 401, 'Aryan Sharma', 'Kathmandu', 'Male', '9811111111', 'aryan.sharma@example.com')
+  4  INTO Student (StudentID, ProgramID, StudentName, StudentAddress, StudentGender, StudentContact, StudentEmail)
+  5  VALUES (302, 402, 'Bina Rai', 'Pokhara', 'Female', '9822222222', 'bina.rai@example.com')
+  6  INTO Student (StudentID, ProgramID, StudentName, StudentAddress, StudentGender, StudentContact, StudentEmail)
+  7  VALUES (303, 403, 'Chetan Kumar', 'Biratnagar', 'Male', '9833333333', 'chetan.kumar@example.com')
+  8  INTO Student (StudentID, ProgramID, StudentName, StudentAddress, StudentGender, StudentContact, StudentEmail)
+  9  VALUES (304, 404, 'Deepa Shrestha', 'Lalitpur', 'Female', '9844444444', 'deepa.shrestha@example.com')
+ 10  INTO Student (StudentID, ProgramID, StudentName, StudentAddress, StudentGender, StudentContact, StudentEmail)
+ 11  VALUES (305, 405, 'Elina Karki', 'Bhaktapur', 'Female', '9855555555', 'elina.karki@example.com')
+ 12  INTO Student (StudentID, ProgramID, StudentName, StudentAddress, StudentGender, StudentContact, StudentEmail)
+ 13  VALUES (306, 406, 'Rohan Thapa', 'Chitwan', 'Male', '9866666666', 'rohan.thapa@example.com')
+ 14  INTO Student (StudentID, ProgramID, StudentName, StudentAddress, StudentGender, StudentContact, StudentEmail)
+ 15  VALUES (307, 407, 'Sushma Lama', 'Dharan', 'Female', '9877777777', 'sushma.lama@example.com')
+ 16  SELECT * FROM dual;
+
+7 rows created.
+
+SQL> INSERT INTO Student (StudentID, ProgramID, StudentName, StudentAddress, StudentGender, StudentContact, StudentEmail)
+  2  VALUES (308, 407, 'Anisha Thapa', 'Lalitpur', 'Female', '9876543210', 'anisha.thapa@example.com');
+
+1 row created.
+
+
+SQL> INSERT ALL
+  2  INTO Module (ModuleID, ModuleName, ModuleCredit, ModuleDuration)
+  3  VALUES (5001, 'Introduction to Programming', 20, '3 Months')
+  4  INTO Module (ModuleID, ModuleName, ModuleCredit, ModuleDuration)
+  5  VALUES (5002, 'Database Systems', 15, '2 Months')
+  6  INTO Module (ModuleID, ModuleName, ModuleCredit, ModuleDuration)
+  7  VALUES (5003, 'Networks and Security', 25, '4 Months')
+  8  INTO Module (ModuleID, ModuleName, ModuleCredit, ModuleDuration)
+  9  VALUES (5004, 'Artificial Intelligence', 30, '5 Months')
+ 10  INTO Module (ModuleID, ModuleName, ModuleCredit, ModuleDuration)
+ 11  VALUES (5005, 'Web Development', 20, '3 Months')
+ 12  INTO Module (ModuleID, ModuleName, ModuleCredit, ModuleDuration)
+ 13  VALUES (5006, 'Data Structures', 25, '4 Months')
+ 14  INTO Module (ModuleID, ModuleName, ModuleCredit, ModuleDuration)
+ 15  VALUES (5007, 'Cloud Computing Fundamentals', 15, '2 Months')
+ 16  SELECT * FROM dual;
+
+7 rows created.
+
+
+
+SQL> INSERT ALL
+  2  INTO Student_Module (StudentID, ModuleID)
+  3  VALUES (301, 5001)
+  4  INTO Student_Module (StudentID, ModuleID)
+  5  VALUES (302, 5002)
+  6  INTO Student_Module (StudentID, ModuleID)
+  7  VALUES (303, 5003)
+  8  INTO Student_Module (StudentID, ModuleID)
+  9  VALUES (304, 5004)
+ 10  INTO Student_Module (StudentID, ModuleID)
+ 11  VALUES (305, 5005)
+ 12  INTO Student_Module (StudentID, ModuleID)
+ 13  VALUES (306, 5006)
+ 14  INTO Student_Module (StudentID, ModuleID)
+ 15  VALUES (307, 5007)
+ 16  INTO Student_Module (StudentID, ModuleID)
+ 17  VALUES (308, 5007)
+ 18  SELECT * FROM dual;
+
+8 rows created.
+
+
+
+SQL> INSERT ALL
+  2  INTO Student_Module_Assessment (StudentID, ModuleID, AssessmentID)
+  3  VALUES (301, 5001, 1)
+  4  INTO Student_Module_Assessment (StudentID, ModuleID, AssessmentID)
+  5  VALUES (302, 5002, 2)
+  6  INTO Student_Module_Assessment (StudentID, ModuleID, AssessmentID)
+  7  VALUES (303, 5003, 3)
+  8  INTO Student_Module_Assessment (StudentID, ModuleID, AssessmentID)
+  9  VALUES (304, 5004, 4)
+ 10  INTO Student_Module_Assessment (StudentID, ModuleID, AssessmentID)
+ 11  VALUES (305, 5005, 5)
+ 12  INTO Student_Module_Assessment (StudentID, ModuleID, AssessmentID)
+ 13  VALUES (306, 5006, 6)
+ 14  INTO Student_Module_Assessment (StudentID, ModuleID, AssessmentID)
+ 15  VALUES (307, 5007, 7)
+ 16  INTO Student_Module_Assessment (StudentID, ModuleID, AssessmentID)
+ 17  VALUES (308, 5007, 7)
+ 18  SELECT * FROM dual;
+
+8 rows created.
+
+
+
+
+SQL> INSERT ALL
+  2  INTO Assessment (AssessmentID, AssessmentTitle, AssessmentDeadline, SubmissionStatus, AssessmentWeightage)
+  3  VALUES (1, 'Midterm Exam - Introduction to Programming', TO_DATE('2024-05-15', 'YYYY-MM-DD'), 'Not Submitted', 20)
+  4  INTO Assessment (AssessmentID, AssessmentTitle, AssessmentDeadline, SubmissionStatus, AssessmentWeightage)
+  5  VALUES (2, 'Final Project - Database Systems', TO_DATE('2024-06-01', 'YYYY-MM-DD'), 'Not Submitted', 25)
+  6  INTO Assessment (AssessmentID, AssessmentTitle, AssessmentDeadline, SubmissionStatus, AssessmentWeightage)
+  7  VALUES (3, 'Assignment - Networks and Security', TO_DATE('2024-05-20', 'YYYY-MM-DD'), 'Submitted', 15)
+  8  INTO Assessment (AssessmentID, AssessmentTitle, AssessmentDeadline, SubmissionStatus, AssessmentWeightage)
+  9  VALUES (4, 'Quiz - Artificial Intelligence', TO_DATE('2024-04-10', 'YYYY-MM-DD'), 'Submitted', 10)
+ 10  INTO Assessment (AssessmentID, AssessmentTitle, AssessmentDeadline, SubmissionStatus, AssessmentWeightage)
+ 11  VALUES (5, 'Midterm Exam - Web Development', TO_DATE('2024-05-05', 'YYYY-MM-DD'), 'Not Submitted', 20)
+ 12  INTO Assessment (AssessmentID, AssessmentTitle, AssessmentDeadline, SubmissionStatus, AssessmentWeightage)
+ 13  VALUES (6, 'Final Project - Data Structures', TO_DATE('2024-06-15', 'YYYY-MM-DD'), 'Submitted', 25)
+ 14  INTO Assessment (AssessmentID, AssessmentTitle, AssessmentDeadline, SubmissionStatus, AssessmentWeightage)
+ 15  VALUES (7, 'Assignment - Cloud Computing Fundamentals', TO_DATE('2024-05-30', 'YYYY-MM-DD'), 'Submitted', 15)
+ 16  SELECT * FROM dual;
+
+7 rows created.
+
+
+
+SQL> INSERT ALL
+  2  INTO Result (ResultID, MarksObtained, TotalMarks, Grade)
+  3  VALUES (101, 10, 100, 'E')
+  4  INTO Result (ResultID, MarksObtained, TotalMarks, Grade)
+  5  VALUES (102, 10, 100, 'E')
+  6  INTO Result (ResultID, MarksObtained, TotalMarks, Grade)
+  7  VALUES (103, 45, 100, 'C')
+  8  INTO Result (ResultID, MarksObtained, TotalMarks, Grade)
+  9  VALUES (104, 93, 100, 'A+')
+ 10  INTO Result (ResultID, MarksObtained, TotalMarks, Grade)
+ 11  VALUES (105, 10, 100, 'E')
+ 12  INTO Result (ResultID, MarksObtained, TotalMarks, Grade)
+ 13  VALUES (106, 89, 100, 'A')
+ 14  INTO Result (ResultID, MarksObtained, TotalMarks, Grade)
+ 15  VALUES (107, 50, 100, 'C+')
+ 16  INTO Result (ResultID, MarksObtained, TotalMarks, Grade)
+ 17  VALUES (108, 98, 100, 'A+')
+ 18  INTO Result (ResultID, MarksObtained, TotalMarks, Grade)
+ 19  VALUES (109, 65, 100, 'B-')
+ 20  INTO Result (ResultID, MarksObtained, TotalMarks, Grade)
+ 21  VALUES (110, 55, 100, 'C+')
+ 22  SELECT * FROM dual;
+
+10 rows created.
+
+
+
+SQL> INSERT ALL
+  2  INTO StdMdAseResult (StudentID, ModuleID, AssessmentID, ResultID)
+  3  VALUES (301, 5001, 1, 101)
+  4  INTO StdMdAseResult (StudentID, ModuleID, AssessmentID, ResultID)
+  5  VALUES (302, 5002, 2, 102)
+  6  INTO StdMdAseResult (StudentID, ModuleID, AssessmentID, ResultID)
+  7  VALUES (303, 5003, 3, 103)
+  8  INTO StdMdAseResult (StudentID, ModuleID, AssessmentID, ResultID)
+  9  VALUES (304, 5004, 4, 104)
+ 10  INTO StdMdAseResult (StudentID, ModuleID, AssessmentID, ResultID)
+ 11  VALUES (305, 5005, 5, 105)
+ 12  INTO StdMdAseResult (StudentID, ModuleID, AssessmentID, ResultID)
+ 13  VALUES (306, 5006, 6, 106)
+ 14  INTO StdMdAseResult (StudentID, ModuleID, AssessmentID, ResultID)
+ 15  VALUES (307, 5007, 7, 107)
+ 16  INTO StdMdAseResult (StudentID, ModuleID, AssessmentID, ResultID)
+ 17  VALUES (308, 5007, 7, 108)
+ 18  SELECT * FROM dual;
+
+8 rows created.
+
+
+SQL> INSERT ALL
+  2  INTO Teacher (TeacherID, TeacherName, TeacherAddress, TeacherGender, TeacherContact, TeacherEmail)
+  3  VALUES (1001, 'Dr. Ramesh Kumar', 'Kathmandu', 'Male', '9801112233', 'ramesh.kumar@example.com')
+  4  INTO Teacher (TeacherID, TeacherName, TeacherAddress, TeacherGender, TeacherContact, TeacherEmail)
+  5  VALUES (1002, 'Mrs. Priya Shah', 'Pokhara', 'Female', '9804445566', 'priya.shah@example.com')
+  6  INTO Teacher (TeacherID, TeacherName, TeacherAddress, TeacherGender, TeacherContact, TeacherEmail)
+  7  VALUES (1003, 'Mr. Suman Adhikari', 'Chitwan', 'Male', '9812345678', 'suman.adhikari@example.com')
+  8  INTO Teacher (TeacherID, TeacherName, TeacherAddress, TeacherGender, TeacherContact, TeacherEmail)
+  9  VALUES (1004, 'Ms. Nisha Thapa', 'Lalitpur', 'Female', '9815557889', 'nisha.thapa@example.com')
+ 10  INTO Teacher (TeacherID, TeacherName, TeacherAddress, TeacherGender, TeacherContact, TeacherEmail)
+ 11  VALUES (1005, 'Dr. Pradeep Bhandari', 'Biratnagar', 'Male', '9826667799', 'pradeep.bhandari@example.com')
+ 12  INTO Teacher (TeacherID, TeacherName, TeacherAddress, TeacherGender, TeacherContact, TeacherEmail)
+ 13  VALUES (1007, 'Mrs. Gita Rai', 'Butwal', 'Female', '9844442211', 'gita.rai@example.com')
+ 14  SELECT * FROM dual;
+
+6 rows created.
+
+
+SQL> INSERT ALL
+  2  INTO Announcement (AnnouncementID, AnnouncementTitle, PostDate, AnnouncementSection)
+  3  VALUES (2001, 'Exam Schedule', TO_DATE('2024-05-04', 'YYYY-MM-DD'), 'General')
+  4  INTO Announcement (AnnouncementID, AnnouncementTitle, PostDate, AnnouncementSection)
+  5  VALUES (2002, 'Class Timings Update', TO_DATE('2025-01-02', 'YYYY-MM-DD'), 'Classroom')
+  6  INTO Announcement (AnnouncementID, AnnouncementTitle, PostDate, AnnouncementSection)
+  7  VALUES (2003, 'New Project Assignment', TO_DATE('2025-01-03', 'YYYY-MM-DD'), 'Assignment')
+  8  INTO Announcement (AnnouncementID, AnnouncementTitle, PostDate, AnnouncementSection)
+  9  VALUES (2004, 'Holiday Announcement', TO_DATE('2024-05-08', 'YYYY-MM-DD'), 'Holidays')
+ 10  INTO Announcement (AnnouncementID, AnnouncementTitle, PostDate, AnnouncementSection)
+ 11  VALUES (2005, 'Course Registration Deadline', TO_DATE('2025-01-05', 'YYYY-MM-DD'), 'Registration')
+ 12  INTO Announcement (AnnouncementID, AnnouncementTitle, PostDate, AnnouncementSection)
+ 13  VALUES (2006, 'Guest Lecture', TO_DATE('2025-01-06', 'YYYY-MM-DD'), 'Event')
+ 14  INTO Announcement (AnnouncementID, AnnouncementTitle, PostDate, AnnouncementSection)
+ 15  VALUES (2007, 'Exam Preparation Tips', TO_DATE('2025-01-07', 'YYYY-MM-DD'), 'Study Tips')
+ 16  SELECT * FROM dual;
+
+7 rows created.
+
+
+
+SQL> INSERT ALL
+  2  INTO StdModTeachAnc (ModuleID, StudentID, TeacherID, AnnouncementID)
+  3  VALUES (5001, 301, 1001, 2001)
+  4  INTO StdModTeachAnc (ModuleID, StudentID, TeacherID, AnnouncementID)
+  5  VALUES (5002, 302, 1002, 2002)
+  6  INTO StdModTeachAnc (ModuleID, StudentID, TeacherID, AnnouncementID)
+  7  VALUES (5003, 303, 1003, 2003)
+  8  INTO StdModTeachAnc (ModuleID, StudentID, TeacherID, AnnouncementID)
+  9  VALUES (5004, 304, 1004, 2004)
+ 10  INTO StdModTeachAnc (ModuleID, StudentID, TeacherID, AnnouncementID)
+ 11  VALUES (5005, 305, 1005, 2005)
+ 12  INTO StdModTeachAnc (ModuleID, StudentID, TeacherID, AnnouncementID)
+ 13  VALUES (5006, 306, 1001, 2006)
+ 14  INTO StdModTeachAnc (ModuleID, StudentID, TeacherID, AnnouncementID)
+ 15  VALUES (5007, 307, 1007, 2007)
+ 16  SELECT * FROM dual;
+
+7 rows created.
+
+
+SQL> INSERT ALL
+  2  INTO Student_Module_Teacher (StudentID, ModuleID, TeacherID)
+  3  VALUES (301, 5001, 1001)
+  4  INTO Student_Module_Teacher (StudentID, ModuleID, TeacherID)
+  5  VALUES (302, 5002, 1002)
+  6  INTO Student_Module_Teacher (StudentID, ModuleID, TeacherID)
+  7  VALUES (303, 5003, 1003)
+  8  INTO Student_Module_Teacher (StudentID, ModuleID, TeacherID)
+  9  VALUES (304, 5004, 1004)
+ 10  INTO Student_Module_Teacher (StudentID, ModuleID, TeacherID)
+ 11  VALUES (305, 5005, 1005)
+ 12  INTO Student_Module_Teacher (StudentID, ModuleID, TeacherID)
+ 13  VALUES (306, 5006, 1001)
+ 14  INTO Student_Module_Teacher (StudentID, ModuleID, TeacherID)
+ 15  VALUES (307, 5007, 1007)
+ 16  INTO Student_Module_Teacher (StudentID, ModuleID, TeacherID)
+ 17  VALUES (308, 5007, 1007)
+ 18  SELECT * FROM dual;
+
+8 rows created.
+
+
+
+
+
+
+
+

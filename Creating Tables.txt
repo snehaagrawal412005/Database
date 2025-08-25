@@ -1,0 +1,132 @@
+Creating Tables
+
+SQL> CREATE TABLE Program (
+  2  ProgramID INT PRIMARY KEY,
+  3  Program Name VARCHAR2(255) NOT NULL,
+  4  Duration VARCHAR(50) NOT NULL
+  5  );
+
+Table created.
+
+SQL> CREATE TABLE Student (
+  2  StudentID INT PRIMARY KEY,
+  3  ProgramID INT NOT NULL,
+  4  Name VARCHAR2(255) NOT NULL,
+  5  Phone VARCHAR(50) NOT NULL,
+  6  Email VARCHAR2(255) NOT NULL,
+  7  EnrollmentDate DATE NOT NULL,
+  8  FOREIGN KEY (ProgramID) REFERENCES Program(ProgramID)
+  9  );
+
+Table created.
+
+SQL> CREATE TABLE StudentModule (
+  2  ModuleID INT PRIMARY KEY,
+  3  StudentID INT NOT NULL,
+  4  FOREIGN KEY (StudentID) REFERENCES Student(StudentID)
+  5  );
+
+Table created.
+
+SQL> CREATE TABLE Module (
+  2  ModuleID INT PRIMARY KEY,
+  3  ModuleName VARCHAR2(255) NOT NULL,
+  4  Description VARCHAR2(255) NOT NULL,
+  5  CreditHours VARCHAR2(50) NOT NULL
+  6  );
+
+Table created.
+
+SQL> CREATE TABLE StudentModuleTeacher (
+  2  TeacherID INT NOT NULL ,
+  3  ModuleID INT NOT NULL,
+  4  StudentID NUMBER NOT NULL,
+  5  PRIMARY KEY (StudentID, ModuleID, TeacherID),
+  6  FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+  7  FOREIGN KEY (ModuleID) REFERENCES Module(ModuleID),
+  8  FOREIGN KEY (TeacherID) REFERENCES Teacher(TeacherID)
+  9  );
+
+Table created.
+
+SQL> CREATE TABLE Teacher (
+  2  TeacherID NUMBER PRIMARY KEY,
+  3  Name VARCHAR2(255) NOT NULL,
+  4  Email VARCHAR2(255) NOT NULL,
+  5  Phone VARCHAR2(50) NOT NULL,
+  6  Department VARCHAR2(255) NOT NULL
+  7  );
+
+Table created.
+
+SQL> CREATE TABLE StuModTeachAnn (
+  2  AnnouncementID INT NOT NULL,
+  3  ModuleID INT NOT NULL,
+  4  StudentID INT NOT NULL,
+  5  TeacherID INT NOT NULL,
+  6  PRIMARY KEY (ModuleID, StudentID, TeacherID, AnnouncementID),
+  7  FOREIGN KEY (ModuleID) REFERENCES Module(ModuleID),
+  8  FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+  9  FOREIGN KEY (TeacherID) REFERENCES Teacher(TeacherID),
+ 10  FOREIGN KEY (AnnouncementID) REFERENCES Announcement(AnnouncementID)
+ 11  );
+
+Table created.
+
+SQL> CREATE TABLE StudentModuleTeacher (
+  2  TeacherID INT NOT NULL ,
+  3  ModuleID INT NOT NULL,
+  4  StudentID NUMBER NOT NULL,
+  5  PRIMARY KEY (StudentID, ModuleID, TeacherID),
+  6  FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+  7  FOREIGN KEY (ModuleID) REFERENCES Module(ModuleID),
+  8  FOREIGN KEY (TeacherID) REFERENCES Teacher(TeacherID)
+  9  );
+
+Table created.
+
+SQL> CREATE TABLE Announcement (
+  2  AnnouncementID INT PRIMARY KEY,
+  3  Title VARCHAR2(255) NOT NULL,
+  4  Content VARCHAR2(255) NOT NULL,
+  5  DatePosted DATE NOT NULL
+  6  );
+
+Table created.
+
+SQL> CREATE TABLE StudentModuleAssessments (
+  2  AssessmentID INT NOT NULL,
+  3  StudentID INT NOT NULL,
+  4  ModuleID INT NOT NULL,
+  5  SubmissionStatus VARCHAR2(50),
+  6  PRIMARY KEY (StudentID, ModuleID, AssessmentID),
+  7  FOREIGN KEY (AssessmentID) REFERENCES Assessment(AssessmentID),
+  8  FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+  9  FOREIGN KEY (ModuleID) REFERENCES Module(ModuleID)
+ 10  );
+
+Table created.
+
+SQL> CREATE TABLE Result (
+  2  Result_ID INT PRIMARY KEY,
+  3  Marks_Obtained INT NOT NULL,
+  4  Grade VARCHAR2(50) NOT NULL,
+  5  Feedback VARCHAR2(50)
+  6  );
+
+Table created.
+
+SQL> CREATE TABLE Assessment (
+  2  AssessmentID INT PRIMARY KEY,
+  3  Title VARCHAR(255) NOT NULL,
+  4  Deadline DATE NOT NULL,
+  5  Weightage DECIMAL(5, 2) NOT NULL,
+  6  TotalMarks INT NOT NULL,
+  7  ResultID INT NOT NULL,
+  8  FOREIGN KEY (ResultID) REFERENCES Result(Result_ID)
+  9  );
+
+Table created.
+
+
+
